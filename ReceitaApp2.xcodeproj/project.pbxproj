@@ -7,14 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7471B0082280F366005FCC97 /* Receita.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7471B0072280F365005FCC97 /* Receita.swift */; };
+		7471B00A2280FC7E005FCC97 /* FavoritosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7471B0092280FC7E005FCC97 /* FavoritosViewController.swift */; };
 		74A67CE42278C337008E9ECA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A67CE32278C337008E9ECA /* AppDelegate.swift */; };
 		74A67CE62278C337008E9ECA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A67CE52278C337008E9ECA /* ViewController.swift */; };
 		74A67CE92278C337008E9ECA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74A67CE72278C337008E9ECA /* Main.storyboard */; };
 		74A67CEB2278C339008E9ECA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74A67CEA2278C339008E9ECA /* Assets.xcassets */; };
 		74A67CEE2278C339008E9ECA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74A67CEC2278C339008E9ECA /* LaunchScreen.storyboard */; };
+		74A67CF62278DD9E008E9ECA /* ReceitaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A67CF52278DD9E008E9ECA /* ReceitaViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7471B0072280F365005FCC97 /* Receita.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Receita.swift; sourceTree = "<group>"; };
+		7471B0092280FC7E005FCC97 /* FavoritosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritosViewController.swift; sourceTree = "<group>"; };
 		74A67CE02278C337008E9ECA /* ReceitaApp2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReceitaApp2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74A67CE32278C337008E9ECA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74A67CE52278C337008E9ECA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +27,7 @@
 		74A67CEA2278C339008E9ECA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74A67CED2278C339008E9ECA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		74A67CEF2278C339008E9ECA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74A67CF52278DD9E008E9ECA /* ReceitaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceitaViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,12 +60,15 @@
 		74A67CE22278C337008E9ECA /* ReceitaApp2 */ = {
 			isa = PBXGroup;
 			children = (
+				74A67CF52278DD9E008E9ECA /* ReceitaViewController.swift */,
+				7471B0092280FC7E005FCC97 /* FavoritosViewController.swift */,
 				74A67CE32278C337008E9ECA /* AppDelegate.swift */,
 				74A67CE52278C337008E9ECA /* ViewController.swift */,
 				74A67CE72278C337008E9ECA /* Main.storyboard */,
 				74A67CEA2278C339008E9ECA /* Assets.xcassets */,
 				74A67CEC2278C339008E9ECA /* LaunchScreen.storyboard */,
 				74A67CEF2278C339008E9ECA /* Info.plist */,
+				7471B0072280F365005FCC97 /* Receita.swift */,
 			);
 			path = ReceitaApp2;
 			sourceTree = "<group>";
@@ -136,7 +145,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				74A67CE62278C337008E9ECA /* ViewController.swift in Sources */,
+				7471B0082280F366005FCC97 /* Receita.swift in Sources */,
+				74A67CF62278DD9E008E9ECA /* ReceitaViewController.swift in Sources */,
 				74A67CE42278C337008E9ECA /* AppDelegate.swift in Sources */,
+				7471B00A2280FC7E005FCC97 /* FavoritosViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

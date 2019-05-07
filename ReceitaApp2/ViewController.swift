@@ -15,6 +15,11 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-
+    @IBAction func apresentarReceita(_ sender: Any) {
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "receita") {
+            self.navigationController?.show(vc, sender: self)
+        }
+    }
+    
 }
 
