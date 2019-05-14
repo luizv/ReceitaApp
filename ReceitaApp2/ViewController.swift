@@ -10,13 +10,31 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    @IBOutlet weak var destaqueImageView: UIImageView!
+    @IBOutlet weak var destaqueButton: UIButton!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let receitaDestacada = Model.shared.receitas[Model.shared.destaque]
+        
+        destaqueImageView.image = receitaDestacada.imagem
+        destaqueButton.setTitle(receitaDestacada.nome, for: .normal)
+        
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? ReceitaViewController {
+            vc.indiceReceitaSelecionada = Model.shared.destaque
+        }
+    }
+    
+    
     @IBAction func apresentarReceita(_ sender: Any) {
-        if let vc = storyboard?.instantiateViewController(withIdentifier: "receita") {
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "receita") as? ReceitaViewController {
+        
+            vc.indiceReceitaSelecionada = Model.shared.destaque
+
             self.navigationController?.show(vc, sender: self)
         }
     }

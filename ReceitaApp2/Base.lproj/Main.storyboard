@@ -63,6 +63,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="bJ9-L8-jbD"/>
+                    <connections>
+                        <outlet property="destaqueButton" destination="hlY-8I-SkL" id="Huf-Me-c9z"/>
+                        <outlet property="destaqueImageView" destination="Wxe-33-5WV" id="nNh-dd-uWz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="Ea0-qg-uzI">
@@ -81,36 +85,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qmj-cy-so1">
-                                <rect key="frame" x="155.5" y="215" width="103" height="30"/>
-                                <state key="normal" title="Café com Leite"/>
-                                <connections>
-                                    <segue destination="7ra-Nc-dwI" kind="show" id="ef5-GU-0hp"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jU7-g8-WG8">
-                                <rect key="frame" x="181" y="270" width="52" height="30"/>
-                                <state key="normal" title="Nescau"/>
-                                <connections>
-                                    <segue destination="7ra-Nc-dwI" kind="show" id="JAE-fz-301"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lcN-CK-mKo">
-                                <rect key="frame" x="188" y="325" width="38" height="30"/>
-                                <state key="normal" title="Miojo"/>
-                                <connections>
-                                    <segue destination="7ra-Nc-dwI" kind="show" id="9fV-8a-4Ym"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="pRf-kM-kr9">
+                                <rect key="frame" x="20" y="387" width="374" height="122"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qmj-cy-so1">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
+                                        <color key="backgroundColor" red="0.1960784314" green="0.69411764710000001" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Café com Leite"/>
+                                        <connections>
+                                            <segue destination="7ra-Nc-dwI" kind="show" id="ef5-GU-0hp"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jU7-g8-WG8">
+                                        <rect key="frame" x="0.0" y="46" width="374" height="30"/>
+                                        <color key="backgroundColor" red="0.1960784314" green="0.69411764710000001" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Nescau"/>
+                                        <connections>
+                                            <segue destination="7ra-Nc-dwI" kind="show" id="JAE-fz-301"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lcN-CK-mKo">
+                                        <rect key="frame" x="0.0" y="92" width="374" height="30"/>
+                                        <color key="backgroundColor" red="0.1960784314" green="0.69411764710000001" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Miojo"/>
+                                        <connections>
+                                            <segue destination="7ra-Nc-dwI" kind="show" id="9fV-8a-4Ym"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="jU7-g8-WG8" firstAttribute="centerX" secondItem="A0O-pp-2ux" secondAttribute="centerX" id="4Lt-Xn-BLN"/>
-                            <constraint firstItem="qmj-cy-so1" firstAttribute="centerX" secondItem="A0O-pp-2ux" secondAttribute="centerX" id="61H-qp-imO"/>
-                            <constraint firstItem="lcN-CK-mKo" firstAttribute="top" secondItem="jU7-g8-WG8" secondAttribute="bottom" constant="25" id="Iqk-rf-FNd"/>
-                            <constraint firstItem="qmj-cy-so1" firstAttribute="top" secondItem="6EV-bi-fY8" secondAttribute="top" constant="127" id="MtZ-aG-BXX"/>
-                            <constraint firstItem="lcN-CK-mKo" firstAttribute="centerX" secondItem="A0O-pp-2ux" secondAttribute="centerX" id="raV-7O-m0j"/>
-                            <constraint firstItem="jU7-g8-WG8" firstAttribute="top" secondItem="qmj-cy-so1" secondAttribute="bottom" constant="25" id="stY-RU-JRc"/>
+                            <constraint firstItem="pRf-kM-kr9" firstAttribute="centerY" secondItem="A0O-pp-2ux" secondAttribute="centerY" id="Dy0-b4-QgK"/>
+                            <constraint firstItem="6EV-bi-fY8" firstAttribute="trailing" secondItem="pRf-kM-kr9" secondAttribute="trailing" constant="20" id="I3V-GA-dcV"/>
+                            <constraint firstItem="pRf-kM-kr9" firstAttribute="leading" secondItem="6EV-bi-fY8" secondAttribute="leading" constant="20" id="v2D-Ne-UQf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6EV-bi-fY8"/>
                     </view>
@@ -118,7 +130,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bYr-q7-cQ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1952" y="806"/>
+            <point key="canvasLocation" x="1950.7246376811595" y="805.58035714285711"/>
         </scene>
         <!--Receita View Controller-->
         <scene sceneID="117-x9-RHZ">
@@ -151,7 +163,7 @@ mais completo</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="fg1-SV-mht">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="fg1-SV-mht">
                                 <rect key="frame" x="300" y="425.5" width="94" height="29"/>
                                 <connections>
                                     <action selector="stepperPressed:" destination="7ra-Nc-dwI" eventType="valueChanged" id="3XZ-Pc-Tq3"/>
@@ -174,6 +186,28 @@ mais completo</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Destaque" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lg6-Xt-wmI">
+                                <rect key="frame" x="305" y="508.5" width="84" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="RIQ-bM-AkS">
+                                <rect key="frame" x="322.5" y="542.5" width="51" height="31"/>
+                                <connections>
+                                    <action selector="onSwitchPressed:" destination="7ra-Nc-dwI" eventType="valueChanged" id="8VY-p4-k8y"/>
+                                </connections>
+                            </switch>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jj8-nm-8hF">
+                                <rect key="frame" x="105.5" y="755" width="203" height="29"/>
+                                <segments>
+                                    <segment title="Ingredientes"/>
+                                    <segment title="Passo a passo"/>
+                                </segments>
+                                <connections>
+                                    <action selector="onSegmentedPressed:" destination="7ra-Nc-dwI" eventType="valueChanged" id="yZd-L9-OSm"/>
+                                </connections>
+                            </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uto-ZE-gmr">
                                 <rect key="frame" x="186.5" y="657" width="41" height="30"/>
                                 <state key="normal" title="Voltar"/>
@@ -184,17 +218,23 @@ mais completo</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="RIQ-bM-AkS" firstAttribute="centerX" secondItem="lg6-Xt-wmI" secondAttribute="centerX" id="0OG-Lg-vTM"/>
                             <constraint firstItem="fg1-SV-mht" firstAttribute="top" secondItem="gax-EA-4DW" secondAttribute="bottom" constant="20" id="83t-s2-QTo"/>
                             <constraint firstItem="TbJ-Hf-bgI" firstAttribute="top" secondItem="fg1-SV-mht" secondAttribute="bottom" constant="8" id="CwI-1u-QmS"/>
+                            <constraint firstItem="eCc-dz-1Cy" firstAttribute="bottom" secondItem="jj8-nm-8hF" secondAttribute="bottom" constant="30" id="DwO-rk-YdK"/>
+                            <constraint firstItem="lg6-Xt-wmI" firstAttribute="centerX" secondItem="fg1-SV-mht" secondAttribute="centerX" id="IQQ-Jd-bn3"/>
                             <constraint firstItem="AQT-Yd-6Iv" firstAttribute="top" secondItem="eCc-dz-1Cy" secondAttribute="top" id="JLX-yJ-48X"/>
                             <constraint firstItem="TbJ-Hf-bgI" firstAttribute="centerX" secondItem="fg1-SV-mht" secondAttribute="centerX" id="MXW-c1-sxa"/>
                             <constraint firstItem="rAW-sg-7eQ" firstAttribute="leading" secondItem="eCc-dz-1Cy" secondAttribute="leading" constant="20" id="Rhh-wP-jdC"/>
+                            <constraint firstItem="RIQ-bM-AkS" firstAttribute="top" secondItem="lg6-Xt-wmI" secondAttribute="bottom" constant="10" id="YSW-wq-OHF"/>
                             <constraint firstItem="rAW-sg-7eQ" firstAttribute="top" secondItem="gax-EA-4DW" secondAttribute="bottom" constant="20" id="YhW-xj-D0R"/>
                             <constraint firstItem="vMK-sx-sGq" firstAttribute="leading" secondItem="eCc-dz-1Cy" secondAttribute="leading" constant="20" id="Ztj-cu-YWl"/>
                             <constraint firstItem="fg1-SV-mht" firstAttribute="leading" secondItem="vMK-sx-sGq" secondAttribute="trailing" constant="20" id="a09-kh-HDu"/>
                             <constraint firstItem="vMK-sx-sGq" firstAttribute="top" secondItem="rAW-sg-7eQ" secondAttribute="bottom" constant="15.5" id="ale-gA-azc"/>
+                            <constraint firstItem="jj8-nm-8hF" firstAttribute="centerX" secondItem="dfJ-HJ-yLk" secondAttribute="centerX" id="blL-xy-5w0"/>
                             <constraint firstItem="eCc-dz-1Cy" firstAttribute="trailing" secondItem="fg1-SV-mht" secondAttribute="trailing" constant="20" id="e7V-IB-Li6"/>
                             <constraint firstItem="uto-ZE-gmr" firstAttribute="centerX" secondItem="dfJ-HJ-yLk" secondAttribute="centerX" id="exT-qF-gdn"/>
+                            <constraint firstItem="lg6-Xt-wmI" firstAttribute="top" secondItem="TbJ-Hf-bgI" secondAttribute="bottom" constant="25" id="iMN-J1-O0a"/>
                             <constraint firstItem="AQT-Yd-6Iv" firstAttribute="leading" secondItem="eCc-dz-1Cy" secondAttribute="leading" id="jH6-FP-7JP"/>
                             <constraint firstItem="gax-EA-4DW" firstAttribute="centerX" secondItem="dfJ-HJ-yLk" secondAttribute="centerX" id="nm3-uc-AFY"/>
                             <constraint firstItem="gax-EA-4DW" firstAttribute="top" secondItem="AQT-Yd-6Iv" secondAttribute="bottom" constant="20" id="qNa-jt-OiH"/>
@@ -209,10 +249,15 @@ mais completo</string>
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="destaqueLabel" destination="lg6-Xt-wmI" id="Mct-zc-w9y"/>
+                        <outlet property="destaqueSwitch" destination="RIQ-bM-AkS" id="9mx-sT-ro7"/>
                         <outlet property="ingredientesTextView" destination="vMK-sx-sGq" id="Ryj-IX-8A3"/>
                         <outlet property="nomeLabel" destination="gax-EA-4DW" id="ZZL-a3-0S3"/>
                         <outlet property="quantidadeLabel" destination="TbJ-Hf-bgI" id="D5b-Io-Yyb"/>
+                        <outlet property="quantidadeStepper" destination="fg1-SV-mht" id="Fdw-b1-wDq"/>
                         <outlet property="receitaImageView" destination="AQT-Yd-6Iv" id="XG8-0f-Dza"/>
+                        <outlet property="sectionTitleLabel" destination="rAW-sg-7eQ" id="C3F-Tr-SJL"/>
+                        <outlet property="segmented" destination="jj8-nm-8hF" id="Mga-mx-Hee"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ooq-bZ-EZa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -263,6 +308,7 @@ mais completo</string>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Bad-wO-WP7" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AEs-3R-6KX">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -280,6 +326,6 @@ mais completo</string>
         <image name="pdq" width="312" height="202"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="JAE-fz-301"/>
+        <segue reference="TUe-Cy-hc5"/>
     </inferredMetricsTieBreakers>
 </document>

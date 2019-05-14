@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		74300B1322834F58005E0141 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74300B1222834F58005E0141 /* Model.swift */; };
 		7471B0082280F366005FCC97 /* Receita.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7471B0072280F365005FCC97 /* Receita.swift */; };
 		7471B00A2280FC7E005FCC97 /* FavoritosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7471B0092280FC7E005FCC97 /* FavoritosViewController.swift */; };
 		74A67CE42278C337008E9ECA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A67CE32278C337008E9ECA /* AppDelegate.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		74300B1222834F58005E0141 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		7471B0072280F365005FCC97 /* Receita.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Receita.swift; sourceTree = "<group>"; };
 		7471B0092280FC7E005FCC97 /* FavoritosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritosViewController.swift; sourceTree = "<group>"; };
 		74A67CE02278C337008E9ECA /* ReceitaApp2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReceitaApp2.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +71,7 @@
 				74A67CEC2278C339008E9ECA /* LaunchScreen.storyboard */,
 				74A67CEF2278C339008E9ECA /* Info.plist */,
 				7471B0072280F365005FCC97 /* Receita.swift */,
+				74300B1222834F58005E0141 /* Model.swift */,
 			);
 			path = ReceitaApp2;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 				74A67CE62278C337008E9ECA /* ViewController.swift in Sources */,
 				7471B0082280F366005FCC97 /* Receita.swift in Sources */,
 				74A67CF62278DD9E008E9ECA /* ReceitaViewController.swift in Sources */,
+				74300B1322834F58005E0141 /* Model.swift in Sources */,
 				74A67CE42278C337008E9ECA /* AppDelegate.swift in Sources */,
 				7471B00A2280FC7E005FCC97 /* FavoritosViewController.swift in Sources */,
 			);

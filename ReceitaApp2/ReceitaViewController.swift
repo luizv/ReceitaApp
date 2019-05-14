@@ -14,14 +14,20 @@ class ReceitaViewController: UIViewController {
     
     @IBOutlet weak var nomeLabel: UILabel!
     
+    
     @IBOutlet weak var quantidadeLabel: UILabel!
     
     @IBOutlet weak var ingredientesTextView: UITextView!
     
+    @IBOutlet weak var destaqueSwitch: UISwitch!
     
-    var receitas: [Receita] = [Receita(nome: "Café com Leite", ingredientes: ["Café","Leite"], quantidades: [50,100], medida: ["g","ml"], imagem: UIImage(named: "cafe")!),
-                               Receita(nome: "Nescau", ingredientes: ["Nescau", "Leite"], quantidades: [2,200], medida: ["colheres", "ml"], imagem: UIImage(named: "nescau")!),
-                               Receita(nome: "Miojo", ingredientes: ["Miojo","Água","Tempero"], quantidades: [1,300,1], medida: ["pacote","ml","pacote"], imagem: UIImage(named: "miojo")!)]
+    @IBOutlet weak var sectionTitleLabel: UILabel!
+    
+    @IBOutlet weak var quantidadeStepper: UIStepper!
+    
+    @IBOutlet weak var destaqueLabel: UILabel!
+    
+    @IBOutlet weak var segmented: UISegmentedControl!
     
     var quantidadeDePorcoes = 1
     var indiceReceitaSelecionada = 0
@@ -37,10 +43,32 @@ class ReceitaViewController: UIViewController {
     }
     
     func refreshInterface() {
-        let receitaSelecionada = receitas[indiceReceitaSelecionada]
+        let receitaSelecionada = Model.shared.receitas[indiceReceitaSelecionada]
         
         receitaImageView.image = receitaSelecionada.imagem
         nomeLabel.text = receitaSelecionada.nome
+        
+        
+        //SegmentedControl
+        
+        if segmented.selectedSegmentIndex == 0 {
+            showIngredientes()
+        } else {
+            showPassoAPasso()
+        }
+    }
+    
+    func showIngredientes() {
+        
+        destaqueLabel.isHidden = false
+        destaqueSwitch.isHidden = false
+        quantidadeLabel.isHidden = false
+        quantidadeStepper.isHidden = false
+        
+        
+        sectionTitleLabel.text = "Ingredientes:"
+        
+        let receitaSelecionada = Model.shared.receitas[indiceReceitaSelecionada]
         
         if quantidadeDePorcoes == 1 {
             quantidadeLabel.text = "1 porção"
@@ -49,20 +77,53 @@ class ReceitaViewController: UIViewController {
         }
         
         ingredientesTextView.text = ""
-
+        
         for (indice,item) in receitaSelecionada.ingredientes.enumerated() {
             ingredientesTextView.text += "\(quantidadeDePorcoes * receitaSelecionada.quantidades[indice])"
             ingredientesTextView.text += "\(receitaSelecionada.medida[indice]) de "
             ingredientesTextView.text += "\(item) \n"
         }
+        
+        if indiceReceitaSelecionada == Model.shared.destaque {
+            destaqueSwitch.isOn = true
+        } else {
+            destaqueSwitch.isOn = false
+        }
     }
+    
+    func showPassoAPasso() {
+        destaqueLabel.isHidden = true
+        destaqueSwitch.isHidden = true
+        quantidadeLabel.isHidden = true
+        quantidadeStepper.isHidden = true
+        
+        sectionTitleLabel.text = "Passo a Passo:"
+
+        let receitaSelecionada = Model.shared.receitas[indiceReceitaSelecionada]
+
+        ingredientesTextView.text = ""
+
+        for (indice,item) in receitaSelecionada.passos.enumerated() {
+            ingredientesTextView.text += "\(indice+1)- \(item)\n"
+        }
+        
+    }
+    
     
     @IBAction func stepperPressed(_ sender: UIStepper) {
         self.quantidadeDePorcoes = Int(sender.value)
         refreshInterface()
     }
     
+    @IBAction func onSwitchPressed(_ sender: UISwitch) {
+        if sender.isOn {
+            Model.shared.destaque = indiceReceitaSelecionada
+        }
+    }
     
+    @IBAction func onSegmentedPressed(_ sender: Any) {
+        refreshInterface()
+    }
     
     @IBAction func voltar(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
