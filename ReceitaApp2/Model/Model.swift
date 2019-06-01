@@ -11,7 +11,13 @@ import UIKit
 class Model {
     static let shared = Model()
     private init() {
+       
         self.destaque = UserDefaults.standard.integer(forKey: "destaque")
+        
+        if let favoritosSalvos = UserDefaults.standard.array(forKey: "favoritos") as? [Int] {
+            self.favoritos = favoritosSalvos
+        }
+        
     }
 
     var destaque: Int = 0 {
@@ -19,6 +25,14 @@ class Model {
             UserDefaults.standard.set(self.destaque, forKey: "destaque")
         }
     }
+    
+    var favoritos: [Int] = [] {
+        didSet {
+            UserDefaults.standard.set(self.favoritos, forKey: "favoritos")
+        }
+    }
+    
+    
     
     let receitas: [Receita] =
         [Receita(nome: "Café com Leite", ingredientes: ["Café","Leite"], quantidades: [50,100], medida: ["g","ml"], imagem: UIImage(named: "cafe")!, passos: ["Adicionar café na xícara","Adicionar leite na xícara","mexer"]),

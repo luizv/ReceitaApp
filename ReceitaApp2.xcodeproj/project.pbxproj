@@ -16,6 +16,8 @@
 		74A67CEB2278C339008E9ECA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74A67CEA2278C339008E9ECA /* Assets.xcassets */; };
 		74A67CEE2278C339008E9ECA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74A67CEC2278C339008E9ECA /* LaunchScreen.storyboard */; };
 		74A67CF62278DD9E008E9ECA /* ReceitaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A67CF52278DD9E008E9ECA /* ReceitaViewController.swift */; };
+		74F31D76228B8742009F827C /* ReceitasTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F31D75228B8742009F827C /* ReceitasTableViewController.swift */; };
+		74F31D78228B8995009F827C /* ReceitaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F31D77228B8995009F827C /* ReceitaCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		74A67CED2278C339008E9ECA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		74A67CEF2278C339008E9ECA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74A67CF52278DD9E008E9ECA /* ReceitaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceitaViewController.swift; sourceTree = "<group>"; };
+		74F31D75228B8742009F827C /* ReceitasTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceitasTableViewController.swift; sourceTree = "<group>"; };
+		74F31D77228B8995009F827C /* ReceitaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceitaCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,18 +66,44 @@
 		74A67CE22278C337008E9ECA /* ReceitaApp2 */ = {
 			isa = PBXGroup;
 			children = (
-				74A67CF52278DD9E008E9ECA /* ReceitaViewController.swift */,
-				7471B0092280FC7E005FCC97 /* FavoritosViewController.swift */,
+				74F31D73228B83AD009F827C /* Model */,
+				74F31D74228B83E3009F827C /* View */,
+				74F31D72228B8390009F827C /* Controller */,
 				74A67CE32278C337008E9ECA /* AppDelegate.swift */,
-				74A67CE52278C337008E9ECA /* ViewController.swift */,
-				74A67CE72278C337008E9ECA /* Main.storyboard */,
-				74A67CEA2278C339008E9ECA /* Assets.xcassets */,
-				74A67CEC2278C339008E9ECA /* LaunchScreen.storyboard */,
 				74A67CEF2278C339008E9ECA /* Info.plist */,
+			);
+			path = ReceitaApp2;
+			sourceTree = "<group>";
+		};
+		74F31D72228B8390009F827C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				74A67CF52278DD9E008E9ECA /* ReceitaViewController.swift */,
+				74F31D75228B8742009F827C /* ReceitasTableViewController.swift */,
+				7471B0092280FC7E005FCC97 /* FavoritosViewController.swift */,
+				74A67CE52278C337008E9ECA /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		74F31D73228B83AD009F827C /* Model */ = {
+			isa = PBXGroup;
+			children = (
 				7471B0072280F365005FCC97 /* Receita.swift */,
 				74300B1222834F58005E0141 /* Model.swift */,
 			);
-			path = ReceitaApp2;
+			path = Model;
+			sourceTree = "<group>";
+		};
+		74F31D74228B83E3009F827C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				74A67CE72278C337008E9ECA /* Main.storyboard */,
+				74F31D77228B8995009F827C /* ReceitaCell.swift */,
+				74A67CEA2278C339008E9ECA /* Assets.xcassets */,
+				74A67CEC2278C339008E9ECA /* LaunchScreen.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,9 +178,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				74A67CE62278C337008E9ECA /* ViewController.swift in Sources */,
+				74F31D78228B8995009F827C /* ReceitaCell.swift in Sources */,
 				7471B0082280F366005FCC97 /* Receita.swift in Sources */,
 				74A67CF62278DD9E008E9ECA /* ReceitaViewController.swift in Sources */,
 				74300B1322834F58005E0141 /* Model.swift in Sources */,
+				74F31D76228B8742009F827C /* ReceitasTableViewController.swift in Sources */,
 				74A67CE42278C337008E9ECA /* AppDelegate.swift in Sources */,
 				7471B00A2280FC7E005FCC97 /* FavoritosViewController.swift in Sources */,
 			);

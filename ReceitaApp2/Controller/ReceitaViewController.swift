@@ -29,6 +29,11 @@ class ReceitaViewController: UIViewController {
     
     @IBOutlet weak var segmented: UISegmentedControl!
     
+    
+    @IBOutlet weak var favoritaLabel: UILabel!
+    
+    @IBOutlet weak var favoritadoSwitch: UISwitch!
+    
     var quantidadeDePorcoes = 1
     var indiceReceitaSelecionada = 0
     
@@ -64,6 +69,8 @@ class ReceitaViewController: UIViewController {
         destaqueSwitch.isHidden = false
         quantidadeLabel.isHidden = false
         quantidadeStepper.isHidden = false
+        favoritadoSwitch.isHidden = false
+        favoritaLabel.isHidden = false
         
         
         sectionTitleLabel.text = "Ingredientes:"
@@ -89,6 +96,14 @@ class ReceitaViewController: UIViewController {
         } else {
             destaqueSwitch.isOn = false
         }
+        
+        if Model.shared.favoritos.contains(indiceReceitaSelecionada) {
+            favoritadoSwitch.isOn = true
+        } else {
+            favoritadoSwitch.isOn = false
+        }
+        
+        
     }
     
     func showPassoAPasso() {
@@ -96,6 +111,8 @@ class ReceitaViewController: UIViewController {
         destaqueSwitch.isHidden = true
         quantidadeLabel.isHidden = true
         quantidadeStepper.isHidden = true
+        favoritadoSwitch.isHidden = true
+        favoritaLabel.isHidden = true
         
         sectionTitleLabel.text = "Passo a Passo:"
 
@@ -119,6 +136,22 @@ class ReceitaViewController: UIViewController {
         if sender.isOn {
             Model.shared.destaque = indiceReceitaSelecionada
         }
+    }
+    
+    
+    @IBAction func favoriteSwitchPressed(_ sender: Any) {
+        if favoritadoSwitch.isOn, !Model.shared.favoritos.contains(indiceReceitaSelecionada) {
+            Model.shared.favoritos.append(indiceReceitaSelecionada)
+        }
+        
+        if !favoritadoSwitch.isOn, Model.shared.favoritos.contains(indiceReceitaSelecionada) {
+            Model.shared.favoritos.removeAll { (indiceDaReceitaFavoritada) -> Bool in
+                return indiceDaReceitaFavoritada == indiceReceitaSelecionada
+            }
+            
+            //Model.shared.favoritos.removeAll(where: {$0 == indiceReceitaSelecionada})
+        }
+        
     }
     
     @IBAction func onSegmentedPressed(_ sender: Any) {
