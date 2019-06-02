@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		74300B1322834F58005E0141 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74300B1222834F58005E0141 /* Model.swift */; };
+		744FD93922A361DB0029236A /* ReceitaCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744FD93822A361DB0029236A /* ReceitaCollectionCell.swift */; };
+		744FD93B22A3629D0029236A /* ReceitasBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744FD93A22A3629D0029236A /* ReceitasBoardViewController.swift */; };
 		7471B0082280F366005FCC97 /* Receita.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7471B0072280F365005FCC97 /* Receita.swift */; };
 		7471B00A2280FC7E005FCC97 /* FavoritosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7471B0092280FC7E005FCC97 /* FavoritosViewController.swift */; };
 		74A67CE42278C337008E9ECA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A67CE32278C337008E9ECA /* AppDelegate.swift */; };
@@ -22,6 +24,8 @@
 
 /* Begin PBXFileReference section */
 		74300B1222834F58005E0141 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		744FD93822A361DB0029236A /* ReceitaCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceitaCollectionCell.swift; sourceTree = "<group>"; };
+		744FD93A22A3629D0029236A /* ReceitasBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceitasBoardViewController.swift; sourceTree = "<group>"; };
 		7471B0072280F365005FCC97 /* Receita.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Receita.swift; sourceTree = "<group>"; };
 		7471B0092280FC7E005FCC97 /* FavoritosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritosViewController.swift; sourceTree = "<group>"; };
 		74A67CE02278C337008E9ECA /* ReceitaApp2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReceitaApp2.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,6 +84,7 @@
 			children = (
 				74A67CF52278DD9E008E9ECA /* ReceitaViewController.swift */,
 				74F31D75228B8742009F827C /* ReceitasTableViewController.swift */,
+				744FD93A22A3629D0029236A /* ReceitasBoardViewController.swift */,
 				7471B0092280FC7E005FCC97 /* FavoritosViewController.swift */,
 				74A67CE52278C337008E9ECA /* ViewController.swift */,
 			);
@@ -100,6 +105,7 @@
 			children = (
 				74A67CE72278C337008E9ECA /* Main.storyboard */,
 				74F31D77228B8995009F827C /* ReceitaCell.swift */,
+				744FD93822A361DB0029236A /* ReceitaCollectionCell.swift */,
 				74A67CEA2278C339008E9ECA /* Assets.xcassets */,
 				74A67CEC2278C339008E9ECA /* LaunchScreen.storyboard */,
 			);
@@ -177,10 +183,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				744FD93922A361DB0029236A /* ReceitaCollectionCell.swift in Sources */,
 				74A67CE62278C337008E9ECA /* ViewController.swift in Sources */,
 				74F31D78228B8995009F827C /* ReceitaCell.swift in Sources */,
 				7471B0082280F366005FCC97 /* Receita.swift in Sources */,
 				74A67CF62278DD9E008E9ECA /* ReceitaViewController.swift in Sources */,
+				744FD93B22A3629D0029236A /* ReceitasBoardViewController.swift in Sources */,
 				74300B1322834F58005E0141 /* Model.swift in Sources */,
 				74F31D76228B8742009F827C /* ReceitasTableViewController.swift in Sources */,
 				74A67CE42278C337008E9ECA /* AppDelegate.swift in Sources */,
