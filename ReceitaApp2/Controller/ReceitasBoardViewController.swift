@@ -30,10 +30,8 @@ class ReceitasBoardViewController: UIViewController, UICollectionViewDelegate, U
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ReceitaCollectionCell", for: indexPath) as! ReceitaCollectionCell
         
         let receita = Model.shared.receitas[indexPath.row]
-        
-        cell.receitaImage.image = receita.imagem
-        cell.nomeLabel.text = receita.nome
-        cell.layer.cornerRadius = 5
+      
+        cell.configure(for: receita)
         
         return cell
     }

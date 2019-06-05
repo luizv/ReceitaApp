@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseUI
 
 class ViewController: UIViewController {
 
@@ -25,11 +27,23 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let receitaDestacada = Model.shared.receitas[Model.shared.destaque]
+        DAOFirebase.loadReceitas() {
+            
+            self.collectionView.reloadData()
+            
+            let receitaDestacada = Model.shared.receitas[Model.shared.destaque]
+            
+            let reference = Storage.storage().reference(withPath: "images/\(receitaDestacada.imagem)")
+            self.destaqueImageView.sd_setImage(with: reference, placeholderImage: UIImage(named: "placeholder.jpg")!)
+            
+            self.destaqueImageView.isHidden = false
+
+            self.destaqueButton.setTitle(receitaDestacada.nome, for: .normal)
+            self.destaqueButton.isHidden = false
+            self.collectionView.isHidden = false
+        }
         
-        destaqueImageView.image = receitaDestacada.imagem
-        destaqueButton.setTitle(receitaDestacada.nome, for: .normal)
-        
+      
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -63,10 +77,8 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         
         let receita = Model.shared.receitas[indexPath.row]
         
-        cell.receitaImage.image = receita.imagem
-        cell.nomeLabel.text = receita.nome
-        cell.layer.cornerRadius = 5
-        
+        cell.configure(for: receita)
+
         return cell
     }
     

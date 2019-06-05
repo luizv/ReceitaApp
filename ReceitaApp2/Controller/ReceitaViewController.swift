@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseUI
 
 class ReceitaViewController: UIViewController {
 
@@ -49,8 +51,10 @@ class ReceitaViewController: UIViewController {
     
     func refreshInterface() {
         let receitaSelecionada = Model.shared.receitas[indiceReceitaSelecionada]
+
+        let reference = Storage.storage().reference(withPath: "images/\(receitaSelecionada.imagem)")
+        self.receitaImageView.sd_setImage(with: reference, placeholderImage: UIImage(named: "placeholder.jpg")!)
         
-        receitaImageView.image = receitaSelecionada.imagem
         nomeLabel.text = receitaSelecionada.nome
         
         

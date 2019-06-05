@@ -36,7 +36,7 @@ class ReceitasTableViewController: UITableViewController {
     
         let receita = Model.shared.receitas[indexPath.row]
         
-        cell.imgReceita.image = receita.imagem
+        cell.imgReceita.image = UIImage(named: receita.imagem)!
         cell.lblReceita.text = receita.nome
 
         return cell

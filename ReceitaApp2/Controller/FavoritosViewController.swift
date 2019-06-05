@@ -59,7 +59,7 @@ class FavoritosViewController: UIViewController, UITableViewDelegate, UITableVie
         
         let indiceReceitaFavoritada = Model.shared.favoritos[indexPath.row]
         
-        cell.imgReceita.image = Model.shared.receitas[indiceReceitaFavoritada].imagem
+        cell.imgReceita.image = UIImage(named: Model.shared.receitas[indiceReceitaFavoritada].imagem)!  
         cell.lblReceita.text = Model.shared.receitas[indiceReceitaFavoritada].nome
         
         return cell

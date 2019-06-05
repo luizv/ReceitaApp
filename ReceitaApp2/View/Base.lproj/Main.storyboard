@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Bad-wO-WP7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rgI-FO-MMa">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -24,9 +24,8 @@
                                 <color key="textColor" red="0.15261479335596267" green="0.16080882417437931" blue="0.41011718750000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pdq" translatesAutoresizingMaskIntoConstraints="NO" id="Wxe-33-5WV">
+                            <imageView hidden="YES" clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wxe-33-5WV">
                                 <rect key="frame" x="20" y="157" width="374" height="225.5"/>
-                                <color key="backgroundColor" red="0.68216139310000001" green="0.78343986740000005" blue="0.2452018134" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Wxe-33-5WV" secondAttribute="height" multiplier="335:202" id="cgh-uS-cv6"/>
@@ -43,15 +42,15 @@
                                     <segue destination="KyG-Un-qlL" kind="show" id="tkz-rs-ah5"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hlY-8I-SkL">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hlY-8I-SkL">
                                 <rect key="frame" x="159.5" y="402.5" width="95" height="30"/>
                                 <state key="normal" title="Pão de Queijo"/>
                                 <connections>
                                     <segue destination="7ra-Nc-dwI" kind="show" id="TUe-Cy-hc5"/>
                                 </connections>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="E1s-uP-IZT">
-                                <rect key="frame" x="0.0" y="452.5" width="414" height="340.5"/>
+                            <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="E1s-uP-IZT">
+                                <rect key="frame" x="0.0" y="452.5" width="414" height="389.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="plN-f5-OPp">
                                     <size key="itemSize" width="326" height="324"/>
@@ -61,7 +60,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ReceitaCollectionCell" id="hf7-yU-usg" customClass="ReceitaCollectionCell" customModule="ReceitaApp2" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="8.5" width="326" height="324"/>
+                                        <rect key="frame" x="20" y="33" width="326" height="324"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="326" height="324"/>
@@ -204,7 +203,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ftV-IQ-lvg">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="P5m-v0-BzR">
                                     <size key="itemSize" width="320" height="320"/>
@@ -226,8 +225,8 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fq4-Vd-4fu">
                                                     <rect key="frame" x="0.0" y="256" width="320" height="64"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="as9-HG-PIw">
-                                                            <rect key="frame" x="130" y="17" width="60" height="30"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="as9-HG-PIw">
+                                                            <rect key="frame" x="10" y="17" width="300" height="30"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -235,7 +234,8 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstItem="as9-HG-PIw" firstAttribute="centerX" secondItem="Fq4-Vd-4fu" secondAttribute="centerX" id="SpU-d2-7wC"/>
+                                                        <constraint firstAttribute="trailing" secondItem="as9-HG-PIw" secondAttribute="trailing" constant="10" id="9qD-Jn-APk"/>
+                                                        <constraint firstItem="as9-HG-PIw" firstAttribute="leading" secondItem="Fq4-Vd-4fu" secondAttribute="leading" constant="10" id="FAe-5C-QrN"/>
                                                         <constraint firstItem="as9-HG-PIw" firstAttribute="centerY" secondItem="Fq4-Vd-4fu" secondAttribute="centerY" id="xp5-0M-CQr"/>
                                                     </constraints>
                                                 </view>
@@ -303,7 +303,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome da Receita" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5xT-z4-TLL">
-                                                    <rect key="frame" x="186" y="39.5" width="818" height="21"/>
+                                                    <rect key="frame" x="186" y="39.5" width="208" height="21"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -356,7 +356,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pdq" translatesAutoresizingMaskIntoConstraints="NO" id="AQT-Yd-6Iv">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pdq" translatesAutoresizingMaskIntoConstraints="NO" id="AQT-Yd-6Iv">
                                 <rect key="frame" x="0.0" y="88" width="414" height="249.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="AQT-Yd-6Iv" secondAttribute="height" multiplier="335:202" id="ag5-Ct-sun"/>
@@ -415,7 +415,7 @@ mais completo</string>
                                 </connections>
                             </switch>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jj8-nm-8hF">
-                                <rect key="frame" x="105.5" y="755" width="203" height="29"/>
+                                <rect key="frame" x="105.5" y="804" width="203" height="29"/>
                                 <segments>
                                     <segment title="Ingredientes"/>
                                     <segment title="Passo a passo"/>
@@ -496,7 +496,7 @@ mais completo</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ooq-bZ-EZa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3408.6956521739135" y="493.52678571428567"/>
+            <point key="canvasLocation" x="2809" y="464"/>
         </scene>
         <!--Destaque-->
         <scene sceneID="zTa-fd-5Nh">
@@ -547,7 +547,6 @@ mais completo</string>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="rgI-FO-MMa" kind="relationship" relationship="viewControllers" id="uDr-Ay-4lO"/>
                         <segue destination="05V-AX-e3O" kind="relationship" relationship="viewControllers" id="Q1B-Uh-2JB"/>
                     </connections>
                 </tabBarController>

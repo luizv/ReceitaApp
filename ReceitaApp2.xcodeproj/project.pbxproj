@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2DE30BB5697B4A8DE5F62907 /* Pods_ReceitaApp2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA887005E8B378CCD457CDA5 /* Pods_ReceitaApp2.framework */; };
+		741CE74422A740A400BC9E4A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 741CE74322A740A400BC9E4A /* GoogleService-Info.plist */; };
+		741CE74622A7456700BC9E4A /* DAOFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741CE74522A7456700BC9E4A /* DAOFirebase.swift */; };
 		74300B1322834F58005E0141 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74300B1222834F58005E0141 /* Model.swift */; };
 		744FD93922A361DB0029236A /* ReceitaCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744FD93822A361DB0029236A /* ReceitaCollectionCell.swift */; };
 		744FD93B22A3629D0029236A /* ReceitasBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744FD93A22A3629D0029236A /* ReceitasBoardViewController.swift */; };
@@ -23,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		741CE74322A740A400BC9E4A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		741CE74522A7456700BC9E4A /* DAOFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAOFirebase.swift; sourceTree = "<group>"; };
 		74300B1222834F58005E0141 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		744FD93822A361DB0029236A /* ReceitaCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceitaCollectionCell.swift; sourceTree = "<group>"; };
 		744FD93A22A3629D0029236A /* ReceitasBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceitasBoardViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +43,9 @@
 		74A67CF52278DD9E008E9ECA /* ReceitaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceitaViewController.swift; sourceTree = "<group>"; };
 		74F31D75228B8742009F827C /* ReceitasTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceitasTableViewController.swift; sourceTree = "<group>"; };
 		74F31D77228B8995009F827C /* ReceitaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceitaCell.swift; sourceTree = "<group>"; };
+		864A9289518E61295AFE0052 /* Pods-ReceitaApp2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReceitaApp2.release.xcconfig"; path = "Target Support Files/Pods-ReceitaApp2/Pods-ReceitaApp2.release.xcconfig"; sourceTree = "<group>"; };
+		A051B2549FB53F50DDDADAF9 /* Pods-ReceitaApp2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReceitaApp2.debug.xcconfig"; path = "Target Support Files/Pods-ReceitaApp2/Pods-ReceitaApp2.debug.xcconfig"; sourceTree = "<group>"; };
+		DA887005E8B378CCD457CDA5 /* Pods_ReceitaApp2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReceitaApp2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,17 +53,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DE30BB5697B4A8DE5F62907 /* Pods_ReceitaApp2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03F6F4ACE0E147608BF591D2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DA887005E8B378CCD457CDA5 /* Pods_ReceitaApp2.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		387460106AFA40C915D2FECB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A051B2549FB53F50DDDADAF9 /* Pods-ReceitaApp2.debug.xcconfig */,
+				864A9289518E61295AFE0052 /* Pods-ReceitaApp2.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		74A67CD72278C337008E9ECA = {
 			isa = PBXGroup;
 			children = (
 				74A67CE22278C337008E9ECA /* ReceitaApp2 */,
 				74A67CE12278C337008E9ECA /* Products */,
+				387460106AFA40C915D2FECB /* Pods */,
+				03F6F4ACE0E147608BF591D2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,7 +122,9 @@
 		74F31D73228B83AD009F827C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				741CE74322A740A400BC9E4A /* GoogleService-Info.plist */,
 				7471B0072280F365005FCC97 /* Receita.swift */,
+				741CE74522A7456700BC9E4A /* DAOFirebase.swift */,
 				74300B1222834F58005E0141 /* Model.swift */,
 			);
 			path = Model;
@@ -119,9 +149,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 74A67CF22278C339008E9ECA /* Build configuration list for PBXNativeTarget "ReceitaApp2" */;
 			buildPhases = (
+				236CB1984924F56CE24F91E9 /* [CP] Check Pods Manifest.lock */,
 				74A67CDC2278C337008E9ECA /* Sources */,
 				74A67CDD2278C337008E9ECA /* Frameworks */,
 				74A67CDE2278C337008E9ECA /* Resources */,
+				B5567D462DD8EF08537E59D5 /* [CP] Embed Pods Frameworks */,
+				CBC1DC2B412C0DCC6B7A938E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -171,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				74A67CEE2278C339008E9ECA /* LaunchScreen.storyboard in Resources */,
+				741CE74422A740A400BC9E4A /* GoogleService-Info.plist in Resources */,
 				74A67CEB2278C339008E9ECA /* Assets.xcassets in Resources */,
 				74A67CE92278C337008E9ECA /* Main.storyboard in Resources */,
 			);
@@ -178,12 +212,72 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		236CB1984924F56CE24F91E9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ReceitaApp2-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B5567D462DD8EF08537E59D5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ReceitaApp2/Pods-ReceitaApp2-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ReceitaApp2/Pods-ReceitaApp2-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ReceitaApp2/Pods-ReceitaApp2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CBC1DC2B412C0DCC6B7A938E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ReceitaApp2/Pods-ReceitaApp2-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ReceitaApp2/Pods-ReceitaApp2-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ReceitaApp2/Pods-ReceitaApp2-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		74A67CDC2278C337008E9ECA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				744FD93922A361DB0029236A /* ReceitaCollectionCell.swift in Sources */,
+				741CE74622A7456700BC9E4A /* DAOFirebase.swift in Sources */,
 				74A67CE62278C337008E9ECA /* ViewController.swift in Sources */,
 				74F31D78228B8995009F827C /* ReceitaCell.swift in Sources */,
 				7471B0082280F366005FCC97 /* Receita.swift in Sources */,
@@ -336,6 +430,7 @@
 		};
 		74A67CF32278C339008E9ECA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A051B2549FB53F50DDDADAF9 /* Pods-ReceitaApp2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -345,7 +440,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.luizv.ReceitaApp2;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.luizv.ReceitaApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -354,6 +449,7 @@
 		};
 		74A67CF42278C339008E9ECA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 864A9289518E61295AFE0052 /* Pods-ReceitaApp2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -363,7 +459,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.luizv.ReceitaApp2;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.luizv.ReceitaApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
