@@ -37,7 +37,8 @@ class ReceitaViewController: UIViewController {
     @IBOutlet weak var favoritadoSwitch: UISwitch!
     
     var quantidadeDePorcoes = 1
-    var indiceReceitaSelecionada = 0
+    //var indiceReceitaSelecionada = 0
+    var receitaSelecionada: Receita!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +51,7 @@ class ReceitaViewController: UIViewController {
     }
     
     func refreshInterface() {
-        let receitaSelecionada = Model.shared.receitas[indiceReceitaSelecionada]
+       // let receitaSelecionada = Model.shared.receitas[indiceReceitaSelecionada]
 
         let reference = Storage.storage().reference(withPath: "images/\(receitaSelecionada.imagem)")
         self.receitaImageView.sd_setImage(with: reference, placeholderImage: UIImage(named: "placeholder.jpg")!)
@@ -79,7 +80,7 @@ class ReceitaViewController: UIViewController {
         
         sectionTitleLabel.text = "Ingredientes:"
         
-        let receitaSelecionada = Model.shared.receitas[indiceReceitaSelecionada]
+       // let receitaSelecionada = Model.shared.receitas[indiceReceitaSelecionada]
         
         if quantidadeDePorcoes == 1 {
             quantidadeLabel.text = "1 porção"
@@ -95,13 +96,13 @@ class ReceitaViewController: UIViewController {
             ingredientesTextView.text += "\(item) \n"
         }
         
-        if indiceReceitaSelecionada == Model.shared.destaque {
+        if receitaSelecionada!.id == Model.shared.destaque {
             destaqueSwitch.isOn = true
         } else {
             destaqueSwitch.isOn = false
         }
         
-        if Model.shared.favoritos.contains(indiceReceitaSelecionada) {
+        if Model.shared.favoritos.contains(receitaSelecionada.id) {
             favoritadoSwitch.isOn = true
         } else {
             favoritadoSwitch.isOn = false
@@ -120,7 +121,7 @@ class ReceitaViewController: UIViewController {
         
         sectionTitleLabel.text = "Passo a Passo:"
 
-        let receitaSelecionada = Model.shared.receitas[indiceReceitaSelecionada]
+        //let receitaSelecionada = Model.shared.receitas[indiceReceitaSelecionada]
 
         ingredientesTextView.text = ""
 
@@ -138,22 +139,22 @@ class ReceitaViewController: UIViewController {
     
     @IBAction func onSwitchPressed(_ sender: UISwitch) {
         if sender.isOn {
-            Model.shared.destaque = indiceReceitaSelecionada
+            Model.shared.destaque = receitaSelecionada.id
         }
     }
     
     
     @IBAction func favoriteSwitchPressed(_ sender: Any) {
-        if favoritadoSwitch.isOn, !Model.shared.favoritos.contains(indiceReceitaSelecionada) {
-            Model.shared.favoritos.append(indiceReceitaSelecionada)
+        if favoritadoSwitch.isOn, !Model.shared.favoritos.contains(receitaSelecionada.id) {
+            Model.shared.favoritos.append(receitaSelecionada.id)
         }
         
-        if !favoritadoSwitch.isOn, Model.shared.favoritos.contains(indiceReceitaSelecionada) {
+        if !favoritadoSwitch.isOn, Model.shared.favoritos.contains(receitaSelecionada.id) {
             Model.shared.favoritos.removeAll { (indiceDaReceitaFavoritada) -> Bool in
-                return indiceDaReceitaFavoritada == indiceReceitaSelecionada
+                return indiceDaReceitaFavoritada == receitaSelecionada.id
             }
             
-            //Model.shared.favoritos.removeAll(where: {$0 == indiceReceitaSelecionada})
+            //Model.shared.favoritos.removeAll(where: {$0 == receitaSelecionada.id})
         }
         
     }

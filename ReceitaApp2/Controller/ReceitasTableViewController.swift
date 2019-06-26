@@ -8,6 +8,7 @@
 
 import UIKit
 
+//PODE EXCLUIR
 class ReceitasTableViewController: UITableViewController {
 
     override func viewDidLoad() {
@@ -44,8 +45,8 @@ class ReceitasTableViewController: UITableViewController {
  
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let vc = storyboard?.instantiateViewController(withIdentifier: "receita") as? ReceitaViewController {
-            vc.indiceReceitaSelecionada = indexPath.row
-            
+            vc.receitaSelecionada = Model.shared.receitas[indexPath.row]
+
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }

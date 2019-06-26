@@ -10,7 +10,8 @@ import Foundation
 import UIKit
 
 class Receita {
-
+    
+    var id: String
     var nome: String
     var ingredientes: [String]
     var quantidades: [Int]
@@ -18,7 +19,8 @@ class Receita {
     var imagem: String
     var passos: [String]
 
-    init(nome: String, ingredientes: [String], quantidades: [Int], medida: [String], imagem: String, passos: [String]) {
+    init(id: String, nome: String, ingredientes: [String], quantidades: [Int], medida: [String], imagem: String, passos: [String]) {
+        self.id = id
         self.nome = nome
         self.ingredientes = ingredientes
         self.quantidades = quantidades
@@ -37,7 +39,8 @@ class Receita {
         receitaData["medida"] = self.medida
         receitaData["quantidades"] = self.quantidades
         receitaData["imagem"] = self.imagem
-        
+        receitaData["id"] = self.id
+
         return receitaData
     }
     
@@ -49,8 +52,9 @@ class Receita {
         let medida: [String] = receitaData["medida"] as! [String]
         let imagem: String = receitaData["imagem"] as! String
         let passos: [String] = receitaData["passos"] as! [String]
+        let id: String = receitaData["id"] as! String
         
-        let receita = Receita(nome: nome, ingredientes: ingredientes, quantidades: quantidades, medida: medida, imagem: imagem, passos: passos)
+        let receita = Receita(id: id, nome: nome, ingredientes: ingredientes, quantidades: quantidades, medida: medida, imagem: imagem, passos: passos)
         
         return receita
     }
