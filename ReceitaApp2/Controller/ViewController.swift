@@ -31,7 +31,7 @@ class ViewController: UIViewController {
             
             self.collectionView.reloadData()
             
-            let receitaDestacada = Model.shared.receitas[Model.shared.destaque]
+            let receitaDestacada = Model.getDestaque()
             
             let reference = Storage.storage().reference(withPath: "images/\(receitaDestacada.imagem)")
             self.destaqueImageView.sd_setImage(with: reference, placeholderImage: UIImage(named: "placeholder.jpg")!)
@@ -48,7 +48,7 @@ class ViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? ReceitaViewController {
-            vc.indiceReceitaSelecionada = Model.shared.destaque
+            vc.receitaSelecionada = Model.getDestaque()
         }
     }
     
@@ -56,7 +56,7 @@ class ViewController: UIViewController {
     @IBAction func apresentarReceita(_ sender: Any) {
         if let vc = storyboard?.instantiateViewController(withIdentifier: "receita") as? ReceitaViewController {
         
-            vc.indiceReceitaSelecionada = Model.shared.destaque
+            vc.receitaSelecionada = Model.getDestaque()
 
             self.navigationController?.show(vc, sender: self)
         }
@@ -84,7 +84,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let vc = storyboard?.instantiateViewController(withIdentifier: "receita") as? ReceitaViewController {
-            vc.indiceReceitaSelecionada = indexPath.row
+            vc.receitaSelecionada = Model.shared.receitas[indexPath.row]
             
             self.navigationController?.pushViewController(vc, animated: true)
         }

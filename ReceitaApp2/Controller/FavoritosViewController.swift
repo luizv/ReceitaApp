@@ -32,16 +32,16 @@ class FavoritosViewController: UIViewController, UITableViewDelegate, UITableVie
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if let tag = (sender as? UIView)?.tag {
-            if let vc = segue.destination as? ReceitaViewController {
-                vc.indiceReceitaSelecionada = tag
-            }
-        }
-        
-        
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        
+//        if let tag = (sender as? UIView)?.tag {
+//            if let vc = segue.destination as? ReceitaViewController {
+//                vc.indiceReceitaSelecionada = tag
+//            }
+//        }
+//        
+//        
+//    }
  
     
     //MARK: - DELEGATE & DATASOURCE
@@ -57,17 +57,17 @@ class FavoritosViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "receitaCell", for: indexPath) as! ReceitaCell
         
-        let indiceReceitaFavoritada = Model.shared.favoritos[indexPath.row]
-        
-        cell.imgReceita.image = UIImage(named: Model.shared.receitas[indiceReceitaFavoritada].imagem)!  
-        cell.lblReceita.text = Model.shared.receitas[indiceReceitaFavoritada].nome
+        let receitaFavoritada = Model.getReceita(receitaID: Model.shared.favoritos[indexPath.row])
+
+        cell.imgReceita.image = UIImage(named: receitaFavoritada.imagem)!
+        cell.lblReceita.text = receitaFavoritada.nome
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let vc = storyboard?.instantiateViewController(withIdentifier: "receita") as? ReceitaViewController {
-            vc.indiceReceitaSelecionada = Model.shared.favoritos[indexPath.row]
+            vc.receitaSelecionada = Model.getReceita(receitaID: Model.shared.favoritos[indexPath.row])
             
             self.navigationController?.pushViewController(vc, animated: true)
         }
