@@ -12,7 +12,7 @@ class Model {
     static let shared = Model()
     private init() {
        
-        self.destaque = UserDefaults.standard.string(forKey: "destaque") ?? "" //?? Model.shared.receitas[0].id
+        self.destaque = UserDefaults.standard.string(forKey: "destaque") ?? ""
         
         if let favoritosSalvos = UserDefaults.standard.array(forKey: "favoritos") as? [String] {
             self.favoritos = favoritosSalvos
@@ -27,14 +27,13 @@ class Model {
     }
     
     static func getDestaque() -> Receita {
-        let receitaDestacada = Model.shared.receitas.first { (r) -> Bool in
+        let receita = Model.shared.receitas.first { (r) -> Bool in
             return r.id == Model.shared.destaque
-        } ?? Model.shared.receitas[0]
+            } ?? Model.shared.receitas[0]
         
-        return receitaDestacada
+        return receita
     }
-  
-
+    
     var favoritos: [String] = [] {
         didSet {
             UserDefaults.standard.set(self.favoritos, forKey: "favoritos")
@@ -44,7 +43,7 @@ class Model {
     static func getReceita(receitaID: String) -> Receita {
         let receita = Model.shared.receitas.first { (r) -> Bool in
             return r.id == receitaID
-            } ?? Model.shared.receitas[0]
+        } ?? Model.shared.receitas[0]
         
         return receita
     }

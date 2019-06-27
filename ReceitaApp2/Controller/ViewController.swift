@@ -31,9 +31,7 @@ class ViewController: UIViewController {
             
             self.collectionView.reloadData()
             
-            let receitaDestacada = Model.shared.receitas.first(where: { (receita) -> Bool in
-                receita.id == Model.shared.destaque
-            }) ?? Model.shared.receitas[0]
+            let receitaDestacada = Model.getDestaque()
             
             let reference = Storage.storage().reference(withPath: "images/\(receitaDestacada.imagem)")
             self.destaqueImageView.sd_setImage(with: reference, placeholderImage: UIImage(named: "placeholder.jpg")!)
@@ -87,7 +85,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let vc = storyboard?.instantiateViewController(withIdentifier: "receita") as? ReceitaViewController {
             vc.receitaSelecionada = Model.shared.receitas[indexPath.row]
-
+            
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }

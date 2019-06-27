@@ -16,7 +16,6 @@ class ReceitaViewController: UIViewController {
     
     @IBOutlet weak var nomeLabel: UILabel!
     
-    
     @IBOutlet weak var quantidadeLabel: UILabel!
     
     @IBOutlet weak var ingredientesTextView: UITextView!
@@ -30,7 +29,6 @@ class ReceitaViewController: UIViewController {
     @IBOutlet weak var destaqueLabel: UILabel!
     
     @IBOutlet weak var segmented: UISegmentedControl!
-    
     
     @IBOutlet weak var favoritaLabel: UILabel!
     
@@ -102,7 +100,7 @@ class ReceitaViewController: UIViewController {
             destaqueSwitch.isOn = false
         }
         
-        if Model.shared.favoritos.contains(receitaSelecionada.id) {
+        if Model.shared.favoritos.contains(receitaSelecionada!.id) {
             favoritadoSwitch.isOn = true
         } else {
             favoritadoSwitch.isOn = false
@@ -139,22 +137,22 @@ class ReceitaViewController: UIViewController {
     
     @IBAction func onSwitchPressed(_ sender: UISwitch) {
         if sender.isOn {
-            Model.shared.destaque = receitaSelecionada.id
+            Model.shared.destaque = receitaSelecionada!.id
         }
     }
     
     
     @IBAction func favoriteSwitchPressed(_ sender: Any) {
-        if favoritadoSwitch.isOn, !Model.shared.favoritos.contains(receitaSelecionada.id) {
-            Model.shared.favoritos.append(receitaSelecionada.id)
+        if favoritadoSwitch.isOn, !Model.shared.favoritos.contains(receitaSelecionada!.id) {
+            Model.shared.favoritos.append(receitaSelecionada!.id)
         }
         
-        if !favoritadoSwitch.isOn, Model.shared.favoritos.contains(receitaSelecionada.id) {
-            Model.shared.favoritos.removeAll { (indiceDaReceitaFavoritada) -> Bool in
-                return indiceDaReceitaFavoritada == receitaSelecionada.id
+        if !favoritadoSwitch.isOn, Model.shared.favoritos.contains(receitaSelecionada!.id) {
+            Model.shared.favoritos.removeAll { (receitaFavoritada) -> Bool in
+                return receitaFavoritada == receitaSelecionada!.id
             }
             
-            //Model.shared.favoritos.removeAll(where: {$0 == receitaSelecionada.id})
+            //Model.shared.favoritos.removeAll(where: {$0 == receitaSelecionada!.id})
         }
         
     }

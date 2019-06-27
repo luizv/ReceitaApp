@@ -36,7 +36,7 @@ class FavoritosViewController: UIViewController, UITableViewDelegate, UITableVie
 //        
 //        if let tag = (sender as? UIView)?.tag {
 //            if let vc = segue.destination as? ReceitaViewController {
-//              //  vc.indiceReceitaSelecionada = tag
+//                vc.indiceReceitaSelecionada = tag
 //            }
 //        }
 //        
@@ -58,7 +58,7 @@ class FavoritosViewController: UIViewController, UITableViewDelegate, UITableVie
         let cell = tableView.dequeueReusableCell(withIdentifier: "receitaCell", for: indexPath) as! ReceitaCell
         
         let receitaFavoritada = Model.getReceita(receitaID: Model.shared.favoritos[indexPath.row])
-        
+
         cell.imgReceita.image = UIImage(named: receitaFavoritada.imagem)!
         cell.lblReceita.text = receitaFavoritada.nome
         

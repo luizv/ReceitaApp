@@ -547,7 +547,7 @@ mais completo</string>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="rgI-FO-MMa" kind="relationship" relationship="viewControllers" id="nEe-nl-5Bv"/>
+                        <segue destination="rgI-FO-MMa" kind="relationship" relationship="viewControllers" id="Owl-hT-WfS"/>
                         <segue destination="05V-AX-e3O" kind="relationship" relationship="viewControllers" id="Q1B-Uh-2JB"/>
                     </connections>
                 </tabBarController>

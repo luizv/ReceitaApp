@@ -18,7 +18,7 @@ class Receita {
     var medida: [String]
     var imagem: String
     var passos: [String]
-
+    
     init(id: String, nome: String, ingredientes: [String], quantidades: [Int], medida: [String], imagem: String, passos: [String]) {
         self.id = id
         self.nome = nome
@@ -33,6 +33,7 @@ class Receita {
       
         var receitaData: [String:Any] = [:]
 
+        receitaData["id"] = self.id
         receitaData["nome"] = self.nome
         receitaData["ingredientes"] = self.ingredientes
         receitaData["passos"] = self.passos
@@ -46,6 +47,7 @@ class Receita {
     
     static func mapToObject(receitaData: [String: Any]) -> Receita {
         
+        let id: String = receitaData["id"] as! String
         let nome: String = receitaData["nome"] as! String
         let ingredientes: [String] = receitaData["ingredientes"] as! [String]
         let quantidades: [Int] = receitaData["quantidades"] as! [Int]
@@ -60,4 +62,5 @@ class Receita {
     }
     
 }
+
 

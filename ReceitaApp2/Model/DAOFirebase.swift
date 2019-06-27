@@ -48,10 +48,10 @@ class DAOFirebase {
                 Model.shared.receitas.removeAll()
                 
                 for document in querySnapshot!.documents {
-                   
+                    
                     var dictData = document.data()
                     dictData["id"] = document.documentID
-
+                    
                     let receita = Receita.mapToObject(receitaData: dictData)
                     
                     Model.shared.receitas.append(receita)

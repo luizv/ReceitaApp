@@ -46,7 +46,7 @@ class ReceitasTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let vc = storyboard?.instantiateViewController(withIdentifier: "receita") as? ReceitaViewController {
             vc.receitaSelecionada = Model.shared.receitas[indexPath.row]
-
+            
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
