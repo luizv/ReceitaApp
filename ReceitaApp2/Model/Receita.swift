@@ -54,7 +54,6 @@ class Receita {
         let medida: [String] = receitaData["medida"] as! [String]
         let imagem: String = receitaData["imagem"] as! String
         let passos: [String] = receitaData["passos"] as! [String]
-        let id: String = receitaData["id"] as! String
         
         let receita = Receita(id: id, nome: nome, ingredientes: ingredientes, quantidades: quantidades, medida: medida, imagem: imagem, passos: passos)
         
